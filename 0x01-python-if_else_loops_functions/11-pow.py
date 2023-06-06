@@ -9,7 +9,6 @@ def pow(a, b):
     for _ in range(b):
         result *= a
 
-    result = round(result, 10)
+    result = float(str(result))
 
     return result
-    print()
