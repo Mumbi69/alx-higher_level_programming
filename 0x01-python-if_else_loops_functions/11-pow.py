@@ -7,7 +7,10 @@ def pow(a, b):
         b = -b
 
     while b > 0:
-        result *= a
-        b -= 1
+        if b & 1:
+            result *= a
+
+        a *= a
+        b >>= 1
 
     return result
