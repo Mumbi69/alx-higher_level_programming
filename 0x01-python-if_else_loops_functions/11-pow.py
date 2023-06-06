@@ -6,9 +6,8 @@ def pow(a, b):
         a = 1 / a
         b = -b
 
-    for _ in range(b):
+    while b > 0:
         result *= a
-
-    result = float(str(result))
+        b -= 1
 
     return result
