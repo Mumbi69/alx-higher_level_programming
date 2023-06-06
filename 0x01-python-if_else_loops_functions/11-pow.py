@@ -1,14 +1,14 @@
 #!/usr/bin/python3
+from decimal import Decimal
+
 def pow(a, b):
-    result = 1
+    result = Decimal(1)
 
     if b < 0:
-        a = 1 / a
+        a = Decimal(1) / Decimal(a)
         b = -b
 
     for _ in range(b):
-        result *= a
-
-    result = round(result, 10)
+        result *= Decimal(a)
 
     return result
