@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for s in range(99):
-    print(f"{s} = Ox{s:02x}")
+for num in range(99):
+    print("{} = 0x{:x}".format(num, num))
