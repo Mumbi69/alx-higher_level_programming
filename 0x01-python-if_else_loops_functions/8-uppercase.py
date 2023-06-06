@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def uppercase(string):
+    result = ""
     for c in string:
         if 'a' <= c <= 'z':
-            print("{:c}".format(ord(c) - 32), end="")
+            result += chr(ord(c) - 32)
         else:
-            print("{:c}".format(ord(c)), end="")
+            result += c
+    print("{:s}".format(result))
     print()
