@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-from itertools import combinations
-
-for combo in combinations(range(10), 2):
-    print("{:02d}".format(combo[0] * 10 + combo[1]), end=", ")
-print("\n")
+for i in range(10):
+    for j in range(i + 1, 10):
+        print("{:d}{:d}".format(i, j), end="")
+        if i != 8 or j != 9:
+            print(", ", end="")
+        else:
+            print()
