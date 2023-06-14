@@ -16,14 +16,10 @@ def roman_to_int(roman_string):
     roman = 0
     prev_value = 0
 
+    process_char = lambda char: roman + roman_values[char] if roman_values[char] >= prev_value else roman - roman_values[char]
+
     for char in reversed(roman_string):
-        value = roman_values.get(char, 0)
-
-        if value >= prev_value:
-            roman += value
-        else:
-            roman -= value
-
-        prev_value = value
+        roman = process_char(char)
+        prev_value = roman_values[char]
 
     return roman
