@@ -15,8 +15,7 @@
 
 > * Return: the address of the new element, or NULL if it failed
 
-
-# Add node at the end 
+# Add node at the end
 * Write a function that adds a new node at the end of a dlistint_t list.
 > * Prototype: dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 
@@ -41,7 +40,7 @@
 > * Prototype: int sum_dlistint(dlistint_t *head);
 > * if the list is empty, return 0
 
-# Insert at index 
+# Insert at index
 * Write a function that inserts a new node at a given position.
 > * Prototype: dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 

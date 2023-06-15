@@ -5,7 +5,7 @@
 * print_dlistint - prints all the elements of a dlistint_t list.
 * @h: first node
 *
-* Return: always success
+* Return: number of nodes
 */
 
 size_t print_dlistint(const dlistint_t *h)
