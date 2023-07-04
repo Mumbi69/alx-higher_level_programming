@@ -1,0 +1,87 @@
+The `0-add_integer` module
+===========================
+
+
+----------------------------------
+Usage of add_integer function
+----------------------------------
+
+Function importation:
+        >>> add_integer = __import__('0-add_integer').add_integer
+
+Check for docstring:
+        >>> doc = __import__("0-add_integer").add_integer.__doc__
+        >>> len(doc) > 1
+        True
+
+Case 1 (int args):
+        >>> add_integer(10, 10)
+        20
+
+case 2 (int and float args):
+        >>> add_integer(10, 10.59)
+        20
+
+case 3 (str and float args):
+        >>> add_integer("hello", 10.59)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+case 4 (int and set args):
+        >>> add_integer(10, {10,20})
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+case 5 (int and dict args):
+        >>> add_integer(10, {"num":10,"hello":"there"})
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+case 6 (list and int args):
+        >>> add_integer([10], 10)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+case 7 (tuple and float args):
+        >>> add_integer((10,), 10.59)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+case 8 (zero args):
+        >>> add_integer()
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+case 9 (one arg):
+        >>> add_integer(-10)
+        88
+
+case 10 (bool and int args):
+        >>> add_integer(True, 10)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+case 11 (int and complex args):
+        >>> add_integer(10, 4j)
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+case 12 (int and bytes):
+        >>> add_integer(10, b"Hello")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+case 13 (int and NoneType args):
+        >>> add_integer(10, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
