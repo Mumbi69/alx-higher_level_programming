@@ -1,0 +1,73 @@
+The `2-matrix_divided` module
+===========================
+
+
+----------------------------------
+Usage of matrix_divided function
+----------------------------------
+
+Function importation:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Check for docstring:
+	>>> doc = __import__("2-matrix_divided").matrix_divided.__doc__
+	>>> len(doc) > 1
+	True
+
+Case 1 (matrix and int and float args):
+	>>> matrix = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
+	>>> matrix_divided(matrix, 4)
+        [[2.5, 5.0, 7.5], [10.0, 12.5, 15.0], [17.5, 20.0, 22.5]]
+
+case 2 (matrix division by 0):
+	>>> matrix = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+case 3 (matrix with a list containing str int and float args):
+	>>> matrix = [[10, 20, 30], [40, '50', 60], [70, 80, 90]]
+	>>> matrix_divided(matrix, 4)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+case 4 (matrix with uneven row size and int and float args):
+	>>> matrix = [[10, 20, 30], [40, 50], [70, 80, 90]]
+	>>> matrix_divided(matrix, 4)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+
+case 5 (invalid matrix args):
+	>>> matrix = ([10, 20, 30], [40, 50])
+	>>> matrix_divided(matrix, 4)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+case 6 (zero args):
+        >>> matrix_divided()
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+case 7 (1 arg):
+        >>> matrix_divided(matrix)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+case 8 (empty matrix args):
+	>>> matrix = [[]]
+	>>> matrix_divided(matrix, 4)
+	[[]]
+
+case 9 (matrix and tuple args):
+	>>> matrix = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
+	>>> matrix_divided(matrix, (3,))
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
