@@ -42,3 +42,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_string(self):
         """Tests when a string is passed"""
         string = "Mumbi"
+
+if __name__ == '__main__':
+    unittest.main()
