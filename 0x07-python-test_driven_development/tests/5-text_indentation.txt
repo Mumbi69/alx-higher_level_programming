@@ -1,0 +1,48 @@
+The `5-text_indentation` module
+===========================
+
+
+----------------------------------
+Usage of text_indentation function
+----------------------------------
+
+Function importation:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+case 1 (pass an empty string)
+        >>> text_indentation("")
+
+case 2 (string with whitespaces around it)
+        >>> text_indentation("  Hey.  ")
+        Hey.
+        <BLANKLINE>
+
+case 3 (not a string)
+        >>> text_indentation(1024)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+case 4 (pass no arguments)
+        >>> text_indentation()
+        Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+case 5 (passing None)
+        >>> text_indentation(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+case 6 (whitespace at the end of string)
+        >>> text_indentation("Hey.  ")
+        Hey.
+        <BLANKLINE>
+
+case 7 (passing a given string with a special character and space)
+        >>> text_indentation("Plus semper.  voluptatis?")
+        Plus semper.
+        <BLANKLINE>
+        voluptatis?
+        <BLANKLINE>
