@@ -109,3 +109,33 @@ Case 14 (passing area with 2 args):
         Traceback (most recent call last):
         ...
         TypeError: area() takes 1 positional argument but 3 were given
+
+Case 16 (passing a list):
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("age", [9])
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+Case 17 (passing a dictionary):
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("age", {5, 9})
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
