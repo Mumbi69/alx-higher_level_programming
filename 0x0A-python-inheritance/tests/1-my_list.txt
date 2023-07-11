@@ -13,6 +13,16 @@ Check for docstring:
         >>> len(doc) > 1
         True
 
+Check for class docstring:
+	>>> doc = __import__("1-my_list").MyList.__doc__
+	>>> len(doc) > 1
+	True
+
+Check for method docstring:
+	>>> doc = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(doc) > 1
+	True
+
 Case 1 (object not defined):
         >>> MyList = __import__('1-my_list').MyList
         >>> my_list2.print_sorted()
@@ -86,3 +96,9 @@ Case 8 (parent object):
         ...
         AttributeError: 'list' object has no attribute 'print_sorted'
         >>>
+
+Case 9 (passing negative and positive sorted integers):
+         >>> my_list = [10, 20, -10, 5, -69]
+         >>> my_list.print_sorted()
+         [-69, -10, 5, 10, 20]
+         >>>
