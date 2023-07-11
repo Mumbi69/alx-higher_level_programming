@@ -7,8 +7,11 @@ Usage of my_list class
 
 Function importation:
 >>> MyList = __import__('1-my_list').MyList
->>>
--------------------------------------------
+
+Check for docstring:
+        >>> doc = __import__("1-my_list").MyList.__doc__
+        >>> len(doc) > 1
+        True
 
 Case 1 (object not defined):
         >>> MyList = __import__('1-my_list').MyList
