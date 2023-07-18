@@ -20,22 +20,6 @@ class Rectangle(Base):
         """Gets the width of the rectangle"""
         return self.__width
 
-    @property
-    def height(self):
-        """Gets the height of the rectangle"""
-        return self.__height
-
-    @property
-    def x(self):
-        """Gets the x of the rectangle"""
-        return self.__x
-
-
-    @property
-    def y(self):
-        """Gets the y of the rectangle"""
-        return self.__y
-
     @width.setter
     def width(self, value):
         """Sets the width of the rectangle"""
@@ -45,6 +29,10 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = value
 
+    @property
+    def height(self):
+        """Gets the height of the rectangle"""
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -55,22 +43,31 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
+    @property
+    def x(self):
+        """Gets the x of the rectangle"""
+        return self.__x
 
     @x.setter
     def x(self, value):
         """Sets x value of the rectangle"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
+
+    @property
+    def y(self):
+        """Gets the y of the rectangle"""
+        return self.__y
 
     @y.setter
     def y(self, value):
         """Sets y value of the rectangle"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
-        if value <= 0:
+        if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
@@ -90,14 +87,11 @@ class Rectangle(Base):
             [print("#", end="") for w in range(self.width)]
             print("")
 
-
-
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
-
 
     def update(self, *args, **kwargs):
         """Updates the class Rectangle attributes"""
@@ -109,7 +103,7 @@ class Rectangle(Base):
                     self.width = val
                 elif m == 2:
                     self.height = val
-                elif m  == 3:
+                elif m == 3:
                     self.x = val
                 elif m == 4:
                     self.y = val
