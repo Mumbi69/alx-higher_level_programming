@@ -104,33 +104,3 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Opens a window and draws all the Rectangle and Square"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
