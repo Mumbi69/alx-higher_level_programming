@@ -96,17 +96,10 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Updates the class Rectangle attributes"""
         if len(args):
+            attributes = ["id", "width", "height", "x", "y"]
             for m, val in enumerate(args):
-                if m == 0:
-                    self.id = val
-                elif m == 1:
-                    self.width = val
-                elif m == 2:
-                    self.height = val
-                elif m == 3:
-                    self.x = val
-                elif m == 4:
-                    self.y = val
+                if m < len(attributes):
+                    setattr(self, attributes[m], val)
         else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
