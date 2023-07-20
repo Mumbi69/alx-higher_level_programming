@@ -3,7 +3,7 @@
 
 import json
 import csv
-
+import turtle
 
 class Base:
     """Represents the first class Base"""
@@ -102,3 +102,37 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Opens a window and draws all the Rectangle and Square"""
+        win = turtle.Screen()
+        win.bgcolor("#e6ccff")
+        win.title("Kidding")
+        shelly = turtle.Turtle()
+        shelly.shape("turtle")
+        shelly.pensize(3)
+
+        shelly.color('#b399ff')
+        for rec in list_rectangles:
+            shelly.showturtle()
+            shelly.up()
+            shelly.goto(rec.x, rec.y)
+            shelly.down()
+            for m in range(2):
+                shelly.forward(rec.width)
+                shelly.left(90)
+                shelly.forward(rec.height)
+                shelly.left(90)
+            shelly.hideturtle()
+
+        shelly.color('#660033')
+        for squ in list_squares:
+            shelly.showturtle()
+            shelly.up()
+            shelly.goto(squ.x, squ.y)
+            shelly.down()
+            for m in range(2):
+                shelly.forward(squ.width)
+                shelly.left(90)
+                shelly.forward(squ.height)
+                shelly.left(90)
+            shelly.hideturtle()
+
+        turtle.exitonclick()
