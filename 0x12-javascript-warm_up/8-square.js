@@ -1,12 +1,10 @@
 #!/usr/bin/node
-const Argsize= process.argv[2];
+const { argv } = require('process');
 
-const size = parseInt(Argsize);
-
-if (!isNaN(size)) {
-  for (let i = 0; i < size; i++) {
+if (!isNaN(argv[2])) {
+  for (let m = 0; m < parseInt(argv[2]); m++) {
     let row = '';
-    for (let j = 0; j < size; j++) {
+    for (let s = 0; s < parseInt(argv[2]); s++) {
       row += 'X';
     }
     console.log(row);
