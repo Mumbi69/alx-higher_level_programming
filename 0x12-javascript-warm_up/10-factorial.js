@@ -1,5 +1,6 @@
 #!/usr/bin/node
 const { argv } = require('process');
+const argument = Number(process.argv[2]);
 function factorial (n) {
   if (isNaN(n)) {
     return 1;
@@ -9,5 +10,4 @@ function factorial (n) {
   }
   return n * factorial(n - 1);
 }
-const argument = Number(process.argv[2]);
 console.log(factorial(argument));
