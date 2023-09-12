@@ -14,7 +14,6 @@ fs.readFile(sourceFile1, 'utf8', (err, data1) => {
 
     fs.writeFile(destinationFile, concatenatedData, (err) => {
       if (err) throw err;
-      console.log('Files concatenated successfully.');
     });
   });
 });
