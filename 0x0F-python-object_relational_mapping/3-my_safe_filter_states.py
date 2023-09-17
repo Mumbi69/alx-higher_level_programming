@@ -16,10 +16,10 @@ if __name__ == "__main__":
         db=argv[3],
     )
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE BINARY name = '{}' \
-ORDER BY id ASC".format(st))
-    query_rows = cur.fetchall()
-    for row in query_rows:
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cur.execute(query, (st,))
+    rows = cur.fetchall()
+    for row in rows:
         print(row)
     cur.close()
     conn.close()
