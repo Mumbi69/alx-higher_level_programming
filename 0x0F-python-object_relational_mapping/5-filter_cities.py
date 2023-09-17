@@ -17,15 +17,17 @@ if __name__ == "__main__":
         db=argv[3]
     )
     cur = conn.cursor()
-    query = """
-        SELECT GROUP_CONCAT(cities.name ORDER BY cities.id ASC SEPARATOR ', ')
-        FROM cities
-        INNER JOIN states ON cities.state_id = states.id
-        WHERE states.name = %s
+    query = """SELECT cities.name \
+                FROM cities \
+                JOIN states ON states.id = cities.state_id \
+                WHERE states.name=%s \
+                ORDER BY cities.id ASC
     """
     cur.execute(query, (st,))
-    rows = cur.fetchone()
-    if rows:
-        print(rows[0])
+    rows = cur.fetchall()
+    state_cities = []
+    for row in rows:
+        state_cities.append(row[0])
+    print(', '.join(state_cities))
     cur.close()
     conn.close()
