@@ -10,10 +10,12 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
+        print("Usage: {} <username> <password> <database> \
+        <state_name>".format(sys.argv[0]))
         sys.exit(1)
 
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
+    username, password, database, state_name = sys.argv[1], \
+        sys.argv[2], sys.argv[3], sys.argv[4]
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
             username, password, database
@@ -24,8 +26,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="Louisiana")
-    session.add(new_state)
-    session.commit()
+    result = session.query(State).filter(State.name == state_name).first()
 
-    print(new_state.id)
+    if result:
+        print(result.id)
+    else:
+        print("Not found")
