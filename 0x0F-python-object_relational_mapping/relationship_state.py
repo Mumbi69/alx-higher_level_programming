@@ -14,12 +14,11 @@ class State(Base):
     State class to represent a state in the USA.
     """
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
     cities = \
         relationship(
             "City",
-            back_populates="state",
-            cascade="all,
-            delete-orphan"
+            overlaps="state",
+            cascade="all, delete"
         )
