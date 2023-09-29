@@ -9,6 +9,6 @@ if __name__ == "__main__":
         utf8_html = html.decode('utf-8')
 
         print("Body response:")
-        print("    - type:", type(html))
-        print("    - content:", html)
-        print("    - utf8 content:", utf8_html)
+        print(f"\t- type:", type(html))
+        print(f"\t- content:", html)
+        print(f"\t- utf8 content:", utf8_html)
