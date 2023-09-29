@@ -3,7 +3,8 @@
 import urllib.request
 
 if __name__ == "__main__":
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') \
+            as response:
         html = response.read()
         utf8_html = html.decode('utf-8')
 
