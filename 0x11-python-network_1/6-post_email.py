@@ -15,6 +15,4 @@ if __name__ == "__main__":
 
     response = requests.post(url, data=data)
     response.raise_for_status()
-
-    print("Your email is:", email)
     print(response.text)
