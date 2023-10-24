@@ -12,9 +12,9 @@ request.get(apiUrl, (error, response, body) => {
       } else {
         return total;
       }
-     }, 0);
-     console.log(count);
-   } else {
-     console.error(`Request failed with status code: ${response.statusCode}`);
-   }
+    }, 0);
+    console.log(count);
+  } else {
+    console.error(`Request failed with status code: ${response.statusCode}`);
+  }
 });
