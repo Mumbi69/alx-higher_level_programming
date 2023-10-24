@@ -15,6 +15,6 @@ request.get(apiUrl, (error, response, body) => {
     }, 0);
     console.log(count);
   } else {
-    console.error(`Request failed with status code: ${response.statusCode}`);
+    console.error(error);
   }
 });
