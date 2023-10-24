@@ -12,7 +12,7 @@ request(apiUrl, (error, response, body) => {
     const characterUrls = movieData.characters;
     const characters = [];
 
-    function fetchCharacter(index) {
+    function fetchCharacter (index) {
       if (index >= characterUrls.length) {
         characters.forEach((characterName) => {
           console.log(characterName);
